@@ -35,7 +35,7 @@ public class DavikTapesTest {
     }
 
     @Test
-    public void actionTest() throws InterruptedException {
+    public void actionTest() {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='Home']")));
@@ -48,26 +48,21 @@ public class DavikTapesTest {
         Actions actions = new Actions(driver);
         actions.moveToElement(companyButtonElement).build().perform();
         assertNotNull(companyButtonElement);
-        Thread.sleep(2000);
 
         WebElement productsButtonElement = driver.findElement(By.xpath("//*[text()='Products']"));
         actions.moveToElement(productsButtonElement).build().perform();
         assertNotNull(productsButtonElement);
-        Thread.sleep(2000);
 
         WebElement industriesButtonElement = driver.findElement(By.xpath("//*[text()='Industries']"));
         actions.moveToElement(industriesButtonElement).build().perform();
         assertNotNull(industriesButtonElement);
-        Thread.sleep(2000);
 
         WebElement knowledgeIndustriesButtonElement = driver.findElement(By.xpath("//*[text()='Knowledge Center']"));
         actions.moveToElement(knowledgeIndustriesButtonElement).build().perform();
         assertNotNull(knowledgeIndustriesButtonElement);
-        Thread.sleep(2000);
 
         WebElement contactsButtonElement = driver.findElement(By.xpath("//*[text()='CONTACT']"));
         contactsButtonElement.click();
         assertNotNull(contactsButtonElement);
-        Thread.sleep(2000);
     }
 }
